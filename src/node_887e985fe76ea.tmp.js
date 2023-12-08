@@ -41,24 +41,18 @@ for(let i =0;i<numbers.length;i++) {
   return totalSum
 }
   console.log (sumNumbers(numbers));
-
-//! Iteration #3.1 Bonus:
+// Iteration #3.1 Bonus:
 function sum(count) {
-  let total = 0
-
   if (count.length === 0) {
     return 0;
   }
-  for (let i=0; i <= count.length - 1; i++){
-    if (typeof count[i] == "string"){
-      total +=count[i].length
-    } else if (typeof count[i] == "object") {
-      return error;
-    } else {
-      total += count[i]
-    }
+
+  let total = 0;
+  
+  if (count.length === 1) {
+    return count[0];
   }
-  return total;
+
 }
 
 // Iteration #4: Calculate the average
@@ -100,24 +94,26 @@ function averageWordLength(wordsArr) {
  
 }
 
-//! Bonus - Iteration #4.1
+// Bonus - Iteration #4.1
 function avg(wordsAv) {
-  let sum = 0;
-
   if (wordsAv.length === 0) {
     return null;
   }
-   for( let i=0; i <= wordsAv.length -1; i++){
-    if (typeof wordsAv[i] == "string") {
-      sum += wordsAv[i].length
-    } else if (typeof wordsAv[i] =="object") {
-      return error;
-    } else {
-      sum += wordsAv[i]
+  let sum = 0;
+
+  for (let i = 0; i < wordsAv.length; i++) {
+    if (typeof wordsAv[i] === 'number') {
+      sum += wordsAv[i];
     }
-   }
-   return sum/wordsAv.length;
+  }
+
+  return sum / wordsAv.length;
+
 }
+
+const wordsAv = [5, 10, 15, 20];
+
+console.log(avg(wordsAv));
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
